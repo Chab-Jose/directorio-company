@@ -2,6 +2,7 @@ import { useState } from 'react';
 import React from "react";
 import {modules}  from "./modules-data.jsx";
 import { TbCircleLetterMFilled } from "react-icons/tb";
+import { MdLogout } from "react-icons/md";
 
 
 function Sidebar({open, setOpen}) {
@@ -55,6 +56,24 @@ function Sidebar({open, setOpen}) {
                     className={`${open ? 'mt-3' : 'mt-1'} space-y-2 px-4`}
                 >
                     {lstmodules}
+
+                    <a
+                        href='#'
+                        className="block sm:hidden text-slate-50 rounded-lg hover:text-slate-300 hover:underline"
+                    >
+                    <div
+                            className="flex items-center p-2 text-xs rounded-lg"
+                        >
+                            <span
+                                className="icon-wrapper mr-2"
+                            >
+                                <MdLogout />
+                            </span>
+                            <p>
+                                Cerrar sesión
+                            </p>
+                        </div>
+                    </a>
                 </nav>
             </aside>
         </>

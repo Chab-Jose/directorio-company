@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from './sidebar';
+import UserDropdown from './user-dropdown';
 import { MdMenu } from "react-icons/md";
 
 
@@ -18,30 +19,32 @@ function Dashboard() {
         {/* Main */}
         <main className="flex-1 p-6">
             {/* NavTabs */}
-            <div className="mb-6 border-b border-gray-300">
-            <nav className="flex space-x-4">
-                <button
-                    onClick={() => setOpenMenu(!openMenu)}
-                    className="py-2 px-4 font-medium  font-bold rounded-full focus:bg-gray-300"
-                >
-                    <span>
-                        <MdMenu />
-                    </span>
-                </button>
-                {['home', 'profile', 'settings'].map((tab) => (
-                <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    className={`py-2 px-4 font-medium border-b-2 ${
-                    activeTab === tab
-                        ? 'border-indigo-500 text-indigo-600'
-                        : 'border-transparent text-gray-500 hover:text-indigo-600'
-                    }`}
-                >
-                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </button>
-                ))}
-            </nav>
+            <div className="mb-6">
+                <nav className="flex justify-end space-x-4">
+                    <div
+                        className='w-full lg:w-1/2 flex justify-start'
+                    >
+                        <button
+                            onClick={() => setOpenMenu(!openMenu)}
+                            className="py-2 px-3 font-medium font-bold rounded-full hover:text-indigo-900 focus:bg-gray-300"
+                        >
+                            <span>
+                                <MdMenu />
+                            </span>
+                        </button>
+                        <a
+                            href="/"
+                            className="py-2 px-3 ml-4 font-lg font-bold rounded-sm hover:text-indigo-900 focus:bg-gray-300 focus:no-underline"
+                        >
+                            Directorio virtual
+                        </a>
+                    </div>
+                    <div
+                        className='hidden lg:w-1/2 flex justify-end md:flex'
+                    >
+                        <UserDropdown />
+                    </div>
+                </nav>
             </div>
 
             {/* Content */}
