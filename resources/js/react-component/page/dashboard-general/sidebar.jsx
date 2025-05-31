@@ -23,9 +23,8 @@ function Sidebar({open, setOpen}) {
                             {module.icon}
                     </span>
 
-                    <p>
-                       {open && <p>{module.name}</p>}
-                    </p>
+                    {open && <p>{module.name}</p>}
+
                 </div>
             </a>
         )
@@ -39,9 +38,8 @@ function Sidebar({open, setOpen}) {
                 open ? 'block' : 'hidden'
                 }`}
                 onClick={() => setOpen(false)}
-            ></div>
-
-
+            >
+            </div>
             <aside
                 className={` ${open ? 'translate-x-0 w-54' : '-translate-x-full w-16'}
                 lg:translate-x-0 fixed lg:relative z-50 h-full
@@ -50,7 +48,7 @@ function Sidebar({open, setOpen}) {
                 <div
                     className="p-6 text-xl font-bold text-slate-50"
                 >
-                    {open ? <p>'Mi Panel'</p> : <span><TbCircleLetterMFilled /></span>}
+                    {open ? <p>Mi Panel</p> : <span><TbCircleLetterMFilled /></span>}
                 </div>
                 <nav
                     className={`${open ? 'mt-3' : 'mt-1'} space-y-2 px-4`}
