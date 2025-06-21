@@ -8,37 +8,37 @@ import { TbLockShare } from "react-icons/tb";
     {
         id: 1,
         name: 'Directorio',
-        url: 'dashboard',
+        url: '/',
         icon : <RiContactsBook3Fill />
     },
     {
         id: 2,
         name: 'Empleados',
-        url: 'users',
+        url: '/empleado',
         icon: <FaUsers />
     },
     {
         id: 3,
         name: 'Departamentos',
-        url: 'reports',
+        url: '/departamento',
         icon: <LuNetwork />
     },
     {
         id: 4,
         name: 'Subsidiarias',
-        url: 'settings',
+        url: '/subsidiaria',
         icon: <FaBuilding />
     },
     {
         id: 5,
         name: 'Roles',
-        url: 'settings',
+        url: 'rol',
         icon: <FaHouseUser/>
     },
     {
         id: 6,
         name: 'Permisos',
-        url: 'settings',
+        url: 'permiso',
         icon: <TbLockShare />
     }
 ];

@@ -3,7 +3,8 @@ import Sidebar from './sidebar';
 import UserDropdown from './user-dropdown';
 import BtnLogin from './btn-login';
 import { MdMenu } from "react-icons/md";
-import TableMain from '../../components/table-general/table-main';
+import { Link, Outlet } from "react-router";
+
 
 
 function Dashboard() {
@@ -34,14 +35,14 @@ function Dashboard() {
                                     <MdMenu />
                                 </span>
                             </button>
-                            <a
-                                href="/"
+                            <Link
+                                to="/"
                                 className="py-2 px-3 ml-4 font-lg font-bold
                                 rounded-sm hover:text-indigo-900
                                 focus:bg-gray-300 focus:no-underline"
                             >
                                 Directorio virtual
-                            </a>
+                            </Link>
                         </div>
                         <div
                             className='hidden lg:w-1/2 flex justify-end md:flex'
@@ -52,17 +53,7 @@ function Dashboard() {
                     </nav>
                 </div>
 
-                {/* Content */}
-                <div className="bg-white shadow rounded p-4 w-full mb-3">
-                    Directorio
-                </div>
-
-                {/* Table*/}
-
-                <TableMain />
-
-
-
+                <Outlet />
             </main>
         </div>
     );

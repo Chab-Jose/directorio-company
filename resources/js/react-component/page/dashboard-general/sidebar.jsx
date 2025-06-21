@@ -1,17 +1,16 @@
-import { useState } from 'react';
-import React from "react";
+
 import {modules}  from "./modules-data.jsx";
 import { TbCircleLetterMFilled } from "react-icons/tb";
 import { MdLogout } from "react-icons/md";
-
+import { Link } from "react-router";
 
 function Sidebar({open, setOpen}) {
 
     const lstmodules = modules.map((module) => {
         return (
-            <a
+            <Link
                 key={module.id}
-                href={module.url}
+                to={module.url}
                 className="block text-slate-50 rounded-lg hover:text-slate-200 hover:bg-violet-800 hover:shadow-md"
             >
                <div
@@ -26,7 +25,7 @@ function Sidebar({open, setOpen}) {
                     {open && <p>{module.name}</p>}
 
                 </div>
-            </a>
+            </Link>
         )
     });
 

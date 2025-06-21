@@ -1,5 +1,7 @@
 import React from "react";
 import { FaAngleLeft } from "react-icons/fa6";
+import { Link } from "react-router";
+
 
 
 /**
@@ -137,12 +139,12 @@ function Login() {
                     <div
                         className="h-15 lg:h-6  grid contents-center"
                     >
-                        <a
-                            href="#"
+                        <Link
+                            to="/"
                             className="m-3 inline-flex items-center text-blue-500 text-bold hover:text-blue-700"
                         >
                             <FaAngleLeft/>Atrás
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="m-2">
