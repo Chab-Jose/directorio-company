@@ -1,11 +1,12 @@
-import TitlePage from "../../components/elements/title-page";
+
+import TitleSingle from "../../components/elements/title-single";
 import TableMain from "../../components/table-general/table-main";
 
 
 function TableDirectory(){
     return(
         <>
-            <TitlePage title="Directorio" />
+            <TitleSingle title="Directorio" />
             <TableMain />
         </>
     );

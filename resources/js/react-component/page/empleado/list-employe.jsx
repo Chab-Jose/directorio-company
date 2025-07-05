@@ -5,7 +5,11 @@ import TableMain from "../../components/table-general/table-main";
 function TableEmploye(){
     return(
         <>
-            <TitlePage title="Empleados" />
+            <TitlePage
+                title="Empleados"
+                nameBtn="Nuevo Empleado"
+                pathBtn="/empleado/crear"
+            />
             <TableMain />
         </>
     );

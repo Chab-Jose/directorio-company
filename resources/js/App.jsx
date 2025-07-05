@@ -9,6 +9,7 @@ import TableSubsidiary from "./react-component/page/subsidiaria/list-subsidiary"
 import TableRol from "./react-component/page/rol/list-rol";
 import TablePermission from "./react-component/page/permiso/list-permission";
 import { Routes, Route } from "react-router";
+import FormCreateEmpleado from "./react-component/page/empleado/form-create";
 
 export default function App() {
     return (
@@ -17,6 +18,7 @@ export default function App() {
                 <Route index element={<TableDirectory />} /> {/* Ruta base "/" */}
                 <Route path="directorio" element={<TableDirectory />} />
                 <Route path="empleado" element={<TableEmploye />} />
+                <Route path="empleado/crear" element={<FormCreateEmpleado />} />
                 <Route path="departamento" element={<TableDepartment />} />
                 <Route path="subsidiaria" element={<TableSubsidiary />} />
                 <Route path="rol" element={<TableRol />} />
