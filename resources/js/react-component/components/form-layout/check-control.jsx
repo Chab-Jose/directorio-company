@@ -9,7 +9,7 @@ export function CheckControl({ label, id, checked, onChange }) {
                 checked={checked}
                 onChange={onChange}
             />
-            <label htmlFor={id} className="text-slate-400">
+            <label htmlFor={id} className="text-slate-400 hover:text-slate-600">
                 {label}
             </label>
         </div>

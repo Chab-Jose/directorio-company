@@ -1,63 +1,32 @@
 import React, { useState } from 'react';
 import Sidebar from './sidebar';
-import UserDropdown from './user-dropdown';
-import BtnLogin from './btn-login';
-import { MdMenu } from "react-icons/md";
-import { Link, Outlet } from "react-router";
+import { Outlet } from "react-router";
+import Navbar from './navbar';
 
 
 
 function Dashboard() {
-    const [activeTab, setActiveTab] = useState('home');
     const [openMenu, setOpenMenu] = useState(false);
 
     return (
-        <div className="md:flex h-screen bg-gray-100">
+        <div className="flex h-screen bg-gray-100 overflow-hidden">
             {/* Sidebar */}
-            <Sidebar
-                open = {openMenu}
-                setOpen={setOpenMenu}
-            />
+            <Sidebar open={openMenu} setOpen={setOpenMenu} />
 
-            {/* Main */}
-            <main className="flex-1 p-6">
-                {/* NavTabs */}
-                <div className="mb-6">
-                    <nav className="flex justify-end space-x-4">
-                        <div
-                            className='w-full lg:w-1/2 flex justify-start'
-                        >
-                            <button
-                                onClick={() => setOpenMenu(!openMenu)}
-                                className="py-2 px-3 font-medium font-bold rounded-full hover:text-indigo-900 focus:bg-gray-300"
-                            >
-                                <span>
-                                    <MdMenu />
-                                </span>
-                            </button>
-                            <Link
-                                to="/"
-                                className="py-2 px-3 ml-4 font-lg font-bold
-                                rounded-sm hover:text-indigo-900
-                                focus:bg-gray-300 focus:no-underline"
-                            >
-                                Directorio virtual
-                            </Link>
-                        </div>
-                        <div
-                            className='hidden lg:w-1/2 flex justify-end md:flex'
-                        >
-                            {/* <UserDropdown /> */}
-                            <BtnLogin route="/login" />
-                        </div>
-                    </nav>
-                </div>
+            {/* Contenedor derecho (navbar + contenido) */}
+            <div className="flex flex-col flex-1 h-full overflow-hidden">
+                {/* Navbar fijo arriba */}
+                <Navbar open={openMenu} setOpen={setOpenMenu} />
 
-                <Outlet />
-            </main>
+                {/* Main scrollable */}
+                <main className="flex-1 overflow-y-auto p-6">
+                    <Outlet />
+                </main>
+            </div>
         </div>
     );
-};
+}
+
 
 export default Dashboard;
 

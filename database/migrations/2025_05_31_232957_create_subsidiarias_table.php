@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('razon_social');
             $table->string('rfc', length:13)->unique();
             $table->string('direccion')->nullable();
-            $table->string('telefono', length:15)->nullable();
-            $table->string('email')->nullable();
+            $table->string('codigo_postal', length:10)->nullable();
+            $table->integer('regimen_fiscal')->nullable();
             $table->boolean('is_activo')->default(true);
             $table->timestamps();
         });

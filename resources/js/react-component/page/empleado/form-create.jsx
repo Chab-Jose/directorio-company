@@ -42,7 +42,7 @@ function DatosEmpleado() {
             <RowForm>
                 <div className="w-3/4"></div>
                 <CheckControl
-                    label="¿El empleado es activo?"
+                    label="¿El empleado esta activo?"
                     id="isActive"
                     checked={true}
                     onChange={() => {}}

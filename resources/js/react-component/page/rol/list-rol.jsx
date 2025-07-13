@@ -5,7 +5,11 @@ import TableMain from "../../components/table-general/table-main";
 function TableRol(){
     return(
         <>
-            <TitlePage title="Roles" />
+            <TitlePage
+                title="Roles"
+                nameBtn="Nuevo rol"
+                pathBtn="/rol/crear"
+            />
             <TableMain />
         </>
     );
