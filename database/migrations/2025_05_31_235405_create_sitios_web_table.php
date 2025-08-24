@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('url')->unique();
             $table->string('nombre', length: 150)->nullable();
             $table->string('descripcion')->nullable();
+            $table->string('imagen')->nullable();
             $table->boolean('is_activo')->default(true);
             $table->timestamps();
         });

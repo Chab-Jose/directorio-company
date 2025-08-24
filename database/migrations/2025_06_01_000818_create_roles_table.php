@@ -58,6 +58,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('dbo_permisos');
+        Schema::dropIfExists('dbo_operaciones');
+        Schema::dropIfExists('dbo_modulos');
+        Schema::dropIfExists('dbo_roles');
     }
 };

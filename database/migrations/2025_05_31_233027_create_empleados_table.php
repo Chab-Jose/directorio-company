@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('no_empleado', length: 100)->unique();
             $table->string('apellido_paterno', length: 150);
             $table->string('apellido_materno', length: 150)->nullable();
+            $table->foreignId('user_id')
+                ->constrained('users')
+                ->onDelete('cascade');
             $table->foreignId('subsidiaria_id')
                 ->constrained('subsidiarias')
                 ->onDelete('cascade');
